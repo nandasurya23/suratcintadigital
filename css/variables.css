@@ -1,0 +1,30 @@
+/* ==============================
+   CSS VARIABLES
+   Theme colors and fonts
+============================== */
+:root {
+    --color-background: #FDFBF7; /* Very Warm White / Ivory */
+    --color-surface: #F5EFEB; /* Soft Blush Cream */
+    --color-text: #4A413F; /* Warm Charcoal */
+    --color-muted: #8A7F7C; /* Muted warm grey */
+    --color-accent: #C28C85; /* Romantic Soft Rose */
+    --color-dark: #362F2D; /* Warm Deep Charcoal */
+    --color-light: #FDFBF7;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+    
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}

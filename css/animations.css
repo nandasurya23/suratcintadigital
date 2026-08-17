@@ -1,0 +1,105 @@
+/* ==============================
+   ANIMATIONS & KEYFRAMES
+============================== */
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.2); }
+    60% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes ping {
+    75%, 100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}
+
+/* ==============================
+   SCROLL REVEAL ANIMATIONS
+============================== */
+.reveal-scroll, .reveal-left, .reveal-right, .reveal-zoom {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scroll { transform: translateY(40px); }
+.reveal-left { transform: translateX(-40px); }
+.reveal-right { transform: translateX(40px); }
+.reveal-zoom { transform: scale(0.9); }
+
+.reveal-scroll.is-visible, 
+.reveal-left.is-visible, 
+.reveal-right.is-visible, 
+.reveal-zoom.is-visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.delay-long { transition-delay: 0.8s; }
+
+/* Utilities for JS */
+.opacity-0 { opacity: 0; }
+.opacity-1 { opacity: 1; }
+.transition-slow { transition: opacity 1.5s ease, transform 1.5s ease; }
+
+/* ==============================
+   PARTICLES
+============================== */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    bottom: -10px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp linear forwards;
+}

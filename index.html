@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kamu ❤️</title>
+    <meta name="description" content="A personal letter.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Libre+Barcode+39&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Preload LCP (Hero Background) untuk loading super cepat -->
+    <link rel="preload" as="image" href="assets/IMG_4102.jpg" fetchpriority="high">
+    
+    <!-- Lightweight Icons (Phosphor) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <audio id="bgMusic" loop preload="auto" autoplay>
+        <source src="assets/Perempuanku.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Player Controls -->
+    <div id="musicPlayer" class="music-player hidden" aria-label="Music Player">
+        <button id="musicToggle" class="music-btn" aria-label="Play/Pause Music">
+            <span class="music-icon" id="musicIcon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="play-path" d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+                    <path class="pause-path hidden" d="M6 19H10V5H6V19ZM14 5V19H18V5H14Z" fill="currentColor"/>
+                </svg>
+            </span>
+            <div class="music-text" style="display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2;">
+                <span style="font-size: 0.7rem; color: var(--color-muted); text-transform: uppercase; letter-spacing: 1px;">Now Playing</span>
+                <span class="music-status" style="font-weight: 600;">♫ Perempuanku</span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Assistant Widget -->
+    <div id="assistantWidget" class="assistant-widget">
+        <div class="assistant-bubble hidden" id="assistantBubble">
+            <span id="assistantMessage">Psst... maafin dia ya kak 🥺</span>
+        </div>
+        <div class="assistant-avatar" id="assistantAvatar" title="Tap aku!">
+            <img src="assets/robot.jpg" alt="Cute Assistant" loading="lazy" decoding="async">
+        </div>
+    </div>
+
+    <main>
+        <!-- SECTION 01: OPENING -->
+        <section class="section-hero" id="opening">
+            <!-- ==============================
+            EDIT THESE VALUES
+            Change hero image source here
+            ============================== -->
+            <div class="hero-bg" style="background-image: url('assets/IMG_4102.jpg');" role="img" aria-label="Hero Image"></div>
+            <div class="hero-overlay"></div>
+            
+            <div class="hero-content reveal-on-load">
+                <h1 class="hero-title">Untuk kamu,<br>Allysa Rizqiana Shahia ❤️</h1>
+                <p class="hero-subtitle">Aku bikin sesuatu kecil buat kamu.</p>
+                <p class="hero-subtext">Ada beberapa hal yang mungkin lebih mudah aku sampaikan lewat ini.</p>
+                
+                <button id="btnOpenLetter" class="btn-primary">
+                    <span style="display: flex; align-items: center; gap: 8px;">Buka suratnya <i class="ph ph-envelope-open"></i></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION 02: OPENING LETTER -->
+        <section class="section-letter bg-primary" id="letter">
+            <div class="container container-sm">
+                <div class="reveal-scroll">
+                    <h2 class="section-title">Aku mau ngomong sesuatu.</h2>
+                </div>
+                <div class="reveal-scroll stagger-1">
+                    <p class="text-body">Aku nggak selalu pintar menyampaikan apa yang aku rasakan.</p>
+                </div>
+                <div class="reveal-scroll stagger-2">
+                    <p class="text-body">Jadi kali ini aku mencoba menyampaikannya lewat sesuatu kecil yang aku buat sendiri.</p>
+                </div>
+                <div class="reveal-scroll stagger-3 mt-lg">
+                    <p class="text-body">Mungkin sederhana.</p>
+                </div>
+                <div class="reveal-scroll stagger-4">
+                    <p class="text-body highlight">Tapi aku buat ini khusus buat kamu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 03: PHOTO MEMORIES -->
+        <section class="section-photos bg-secondary" id="photos">
+            <div class="container">
+                <div class="gallery">
+                    <!-- ==============================
+                    EDIT THESE VALUES
+                    Change gallery images and captions here
+                    ============================== -->
+                    <figure class="gallery-item reveal-scroll stagger-1">
+                        <div class="img-wrapper">
+                            <img src="assets/20708fda-4300-4b11-81e4-0d842e91fda1.JPG" alt="Memory 1" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption>Salah satu foto kamu yang paling aku suka.</figcaption>
+                    </figure>
+                    <figure class="gallery-item reveal-scroll stagger-2">
+                        <div class="img-wrapper">
+                            <img src="assets/51e01400-bd16-4093-b0e3-5abaad1fb3e6.JPG" alt="Memory 2" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption>Foto sederhana, tapi selalu bikin aku senyum.</figcaption>
+                    </figure>
+                    <figure class="gallery-item reveal-scroll stagger-3">
+                        <div class="img-wrapper">
+                            <img src="assets/IMG_3825.JPG" alt="Memory 3" loading="lazy" decoding="async">
+                        </div>
+                        <figcaption>Yang ini selalu bikin aku kangen.</figcaption>
+                    </figure>
+                    <figure class="gallery-item reveal-zoom stagger-4 flip-container" id="secretPhoto">
+                        <div class="flip-inner">
+                            <div class="flip-front">
+                                <div class="img-wrapper">
+                                    <div class="tap-hint"><i class="ph ph-hand-tap"></i> Tap foto ini</div>
+                                    <img src="assets/IMG_4101.JPG" alt="Memory 4" loading="lazy" decoding="async">
+                                </div>
+                                <figcaption>Ada rahasia di balik foto ini...</figcaption>
+                            </div>
+                            <div class="flip-back">
+                                <div class="back-content">
+                                    <p class="handwriting">Screenshot halaman ini dan kirim ke aku kalau kamu beneran maafin aku. Aku janji bakal jadi lebih baik buat kita.</p>
+                                    <i class="ph-fill ph-heart text-accent" style="font-size: 2rem;"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 04: APOLOGY -->
+        <section class="section-apology bg-primary" id="apology">
+            <div class="container container-sm">
+                <div class="reveal-scroll">
+                    <h2 class="section-title text-large">Aku mau minta maaf.</h2>
+                </div>
+                
+                <div class="apology-content mt-lg">
+                    <p class="reveal-scroll stagger-1">Aku sadar sampai sekarang aku mungkin belum bisa jadi cowok yang kamu mau.</p>
+                    <p class="reveal-scroll stagger-2">Aku masih banyak kurangnya.</p>
+                    <p class="reveal-scroll stagger-3">Aku belum selalu bisa benar-benar ngerti kamu.</p>
+                    <p class="reveal-scroll stagger-4">Aku belum selalu peka sama apa yang kamu rasain.</p>
+                    <p class="reveal-scroll stagger-5">Dan mungkin ada saat-saat di mana kamu cuma ingin dimengerti, tapi aku belum bisa memberikan itu.</p>
+                </div>
+
+                <div class="reveal-scroll mt-xl">
+                    <p class="text-lead highlight">Untuk semua itu, aku benar-benar minta maaf.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 05: SELF REFLECTION -->
+        <section class="section-reflection bg-dark text-light" id="reflection">
+            <div class="container container-sm text-center">
+                <div class="reveal-scroll mb-lg">
+                    <h2 class="section-title">Aku sadar aku masih harus banyak belajar.</h2>
+                </div>
+                
+                <ul class="reflection-list">
+                    <li class="reveal-right stagger-1"><i class="ph ph-sparkle text-accent" style="font-size:1.2rem;"></i> Belajar memahami kamu.</li>
+                    <li class="reveal-right stagger-2"><i class="ph ph-sparkle text-accent" style="font-size:1.2rem;"></i> Belajar mendengarkan kamu.</li>
+                    <li class="reveal-right stagger-3"><i class="ph ph-sparkle text-accent" style="font-size:1.2rem;"></i> Belajar lebih peka.</li>
+                    <li class="reveal-right stagger-4"><i class="ph ph-sparkle text-accent" style="font-size:1.2rem;"></i> Belajar melihat sesuatu dari sudut pandang kamu.</li>
+                    <li class="reveal-right stagger-5 highlight-light mt-md"><i class="ph ph-heart text-accent" style="font-size:1.2rem;"></i> Belajar menjadi pasangan yang lebih baik.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 06: DON'T STOP AT SORRY -->
+        <section class="section-turning-point bg-primary" id="turning">
+            <div class="container container-sm">
+                <div class="reveal-scroll">
+                    <h2 class="section-title">Tapi aku nggak mau berhenti di kata maaf.</h2>
+                </div>
+                
+                <div class="turning-content mt-lg">
+                    <p class="reveal-scroll stagger-1">Aku tahu kata maaf saja nggak cukup.</p>
+                    <p class="reveal-scroll stagger-2">Aku nggak bisa mengubah semua kesalahan hanya dengan satu kalimat.</p>
+                    <p class="reveal-scroll stagger-3">Aku juga nggak bisa tiba-tiba menjadi sempurna.</p>
+                    
+                    <div class="mt-lg">
+                        <p class="reveal-scroll stagger-1">Tapi aku bisa terus belajar.</p>
+                        <p class="reveal-scroll stagger-2">Aku bisa terus berusaha.</p>
+                        <p class="reveal-scroll stagger-3">Aku bisa terus memperbaiki diri.</p>
+                    </div>
+
+                    <div class="reveal-scroll mt-lg">
+                        <p class="text-lead highlight text-accent">Dan aku mau melakukan itu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 07: LDR -->
+        <section class="section-ldr bg-secondary" id="ldr">
+            <div class="container container-sm">
+                <div class="reveal-scroll">
+                    <h2 class="section-title">Walaupun kita jauh...</h2>
+                </div>
+                
+                <div class="ldr-content mt-lg">
+                    <p class="reveal-scroll stagger-1">Aku tahu LDR nggak selalu mudah.</p>
+                    <p class="reveal-scroll stagger-2">Ada banyak momen di mana aku berharap bisa berada di samping kamu.</p>
+                    <p class="reveal-scroll stagger-3">Bisa melihat ekspresi kamu secara langsung.</p>
+                    <p class="reveal-scroll stagger-4">Bisa memeluk kamu ketika kamu sedih.</p>
+                    <p class="reveal-scroll stagger-5">Bisa langsung datang ketika kamu membutuhkan aku.</p>
+                    
+                    <div class="mt-lg">
+                        <p class="reveal-scroll stagger-1">Tapi meskipun jarak membuat semuanya lebih sulit...</p>
+                        <div class="reveal-scroll stagger-2 mt-md">
+                            <p class="text-lead highlight">Aku tetap ingin belajar hadir buat kamu.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-lg">
+                        <p class="reveal-scroll stagger-3">Mungkin aku nggak selalu bisa hadir secara fisik.</p>
+                        <p class="reveal-scroll stagger-4">Tapi aku ingin tetap hadir dengan cara yang aku bisa.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 08: PROMISE -->
+        <section class="section-promise bg-dark text-light" id="promise">
+            <div class="container container-sm text-center">
+                <div class="reveal-scroll">
+                    <h2 class="section-title text-huge">Aku nggak janji akan sempurna.</h2>
+                </div>
+                
+                <div class="promise-content mt-lg">
+                    <p class="reveal-scroll stagger-1">Karena aku tahu aku nggak akan pernah sempurna.</p>
+                    <p class="reveal-scroll stagger-2">Tapi aku bisa janji untuk terus berusaha.</p>
+                </div>
+                
+                <div class="promise-words mt-xl mb-xl">
+                    <span class="reveal-scroll stagger-1">Belajar.</span>
+                    <span class="reveal-scroll stagger-2">Mendengarkan.</span>
+                    <span class="reveal-scroll stagger-3">Memahami.</span>
+                    <span class="reveal-scroll stagger-4">Berubah.</span>
+                    <span class="reveal-scroll stagger-5">Berusaha.</span>
+                </div>
+                
+                <div class="reveal-scroll">
+                    <p class="text-lead highlight-light font-heading italic">Aku ingin menjadi seseorang yang bukan cuma mencintai kamu, tapi juga benar-benar belajar memahami kamu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 09: FINAL MESSAGE -->
+        <section class="section-final bg-primary text-center" id="final">
+            <div class="container container-sm">
+                <!-- ==============================
+                EDIT THESE VALUES
+                Change final image here
+                ============================== -->
+                <div class="final-image reveal-zoom mb-lg">
+                    <img src="assets/IMG_4105.JPG" alt="Us" loading="lazy" decoding="async">
+                </div>
+
+                <div class="reveal-scroll">
+                    <h2 class="section-title text-medium mb-md">Jadi...</h2>
+                </div>
+                
+                <div class="final-content mt-lg">
+                    <p class="reveal-scroll stagger-1">Maafin aku ya, sayang.</p>
+                    <p class="reveal-scroll stagger-2">Aku mungkin belum menjadi cowok yang kamu inginkan.</p>
+                    <p class="reveal-scroll stagger-3">Aku mungkin masih sering salah.</p>
+                    <p class="reveal-scroll stagger-4">Aku mungkin masih belum sepenuhnya mengerti kamu.</p>
+                    
+                    <p class="reveal-scroll stagger-5 mt-md">Tapi aku ingin kamu tahu satu hal.</p>
+                </div>
+
+                <div class="final-climax mt-xl mb-xl">
+                    <div class="reveal-scroll delay-long">
+                        <h2 class="text-giant text-accent">Aku masih memilih kamu.</h2>
+                    </div>
+                </div>
+
+                <div class="reveal-scroll">
+                    <p class="text-lead mb-xl">Dan aku masih mau terus berusaha untuk kita.</p>
+                </div>
+                
+                <!-- Boarding Pass Ticket (Idea 4) -->
+                <div class="ticket-container reveal-scroll mb-xl mt-lg">
+                    <div class="ticket">
+                        <div class="ticket-header">
+                            <span>LDR E-TICKET</span>
+                            <i class="ph-fill ph-airplane-tilt"></i>
+                        </div>
+                        <div class="ticket-body">
+                            <div class="ticket-row">
+                                <div class="ticket-col">
+                                    <small>PASSENGER</small>
+                                    <strong>Allysa R. Shahia</strong>
+                                </div>
+                                <div class="ticket-col text-right">
+                                    <small>DATE</small>
+                                    <strong>∞ FOREVER</strong>
+                                </div>
+                            </div>
+                            <div class="ticket-row mt-sm">
+                                <div class="ticket-col">
+                                    <small>DESTINATION</small>
+                                    <strong>Bahagia bareng aku</strong>
+                                </div>
+                                <div class="ticket-col text-right">
+                                    <small>CLASS</small>
+                                    <strong>VIP LOVE</strong>
+                                </div>
+                            </div>
+                            <div class="ticket-message mt-md">
+                                "Pakai tiket ini kapan pun kamu kangen, sedih, marah, atau butuh aku."
+                            </div>
+                        </div>
+                        <div class="ticket-footer">
+                            <div class="barcode">ALLYSA-FOREVER</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heartbeat Unlock (Idea 1) -->
+                <div id="unlockContainer" class="unlock-container reveal-scroll">
+                    <p class="text-sm mb-md text-muted">Buktikan kalau kamu maafin aku...</p>
+                    <div class="unlock-btn-wrapper">
+                        <div class="unlock-ring"></div>
+                        <button id="btnUnlock" class="btn-unlock">
+                            <i class="ph ph-fingerprint"></i>
+                        </button>
+                    </div>
+                    <p id="unlockText" class="mt-md text-sm highlight">Tahan Jarimu 3 Detik</p>
+                    <!-- Progress bar -->
+                    <div class="progress-bar-container">
+                        <div id="unlockProgress" class="progress-bar"></div>
+                    </div>
+                </div>
+                
+                <!-- CTA Container -->
+                <div id="ctaContainer" class="cta-container d-none opacity-0 transition-slow mt-lg">
+                    <p class="mb-sm text-light text-sm">Terima kasih sayang...</p>
+                    <button id="btnForgive" class="btn-cta">
+                        <span class="heart-icon">❤️</span> Kabari aku sekarang
+                    </button>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- Optional Particles Container -->
+    <div id="particles" aria-hidden="true"></div>
+
+    <!-- Modular Scripts -->
+    <script src="js/audio.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+    <script src="js/assistant.js" defer></script>
+    <script src="js/unlock.js" defer></script>
+</body>
+</html>
