@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const nextSection = document.getElementById('letter');
             if (nextSection) {
+                let autoScrollScheduled = false;
                 const targetPosition = nextSection.getBoundingClientRect().top + window.scrollY;
                 window.scrollTo({
                     top: targetPosition,
@@ -64,15 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 const checkScrollFinished = setInterval(() => {
                     if (Math.abs(window.scrollY - targetPosition) < 10 || (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
                         clearInterval(checkScrollFinished);
-                        setTimeout(() => {
-                            window.startAutoScroll();
-                        }, 1500);
+                        if (!autoScrollScheduled) {
+                            autoScrollScheduled = true;
+                            setTimeout(() => {
+                                window.startAutoScroll();
+                            }, 1500);
+                        }
                     }
                 }, 100);
 
                 setTimeout(() => {
                     clearInterval(checkScrollFinished);
-                    window.startAutoScroll();
+                    if (!autoScrollScheduled) {
+                        autoScrollScheduled = true;
+                        window.startAutoScroll();
+                    }
                 }, 2500);
             }
         });

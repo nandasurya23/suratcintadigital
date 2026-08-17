@@ -126,6 +126,20 @@
     }
 }
 
+@media (max-width: 375px) {
+    .music-player {
+        bottom: 15px;
+        right: 15px;
+    }
+    .music-btn {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+    .music-text {
+        font-size: 0.8rem;
+    }
+}
+
 /* ==============================
    PHOTO GALLERY (POLAROID STYLE)
 ============================== */
@@ -172,6 +186,19 @@
     }
     .gallery-item:nth-child(even) { transform: rotate(2deg); }
     .gallery-item:nth-child(odd) { transform: rotate(-2deg); }
+}
+
+/* Touch feedback for mobile (no hover state) */
+@media (hover: none) {
+    .gallery-item:active {
+        transform: translateY(-5px) rotate(0deg) scale(1.02) !important;
+        box-shadow: 0 15px 35px rgba(176, 140, 132, 0.2);
+        z-index: 10;
+    }
+    .gallery-item:active img {
+        transform: scale(1.03);
+        filter: sepia(0%) contrast(100%);
+    }
 }
 
 .img-wrapper {
@@ -231,6 +258,23 @@ figcaption {
         bottom: 20px;
         left: 20px;
         gap: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .assistant-widget {
+        bottom: 15px;
+        left: 15px;
+        gap: 8px;
+    }
+    .assistant-avatar {
+        width: 48px;
+        height: 48px;
+    }
+    .assistant-bubble {
+        max-width: 170px;
+        font-size: 0.8rem;
+        padding: 10px 14px;
     }
 }
 
@@ -434,6 +478,28 @@ figcaption {
     text-align: center;
 }
 
+@media (max-width: 375px) {
+    .ticket {
+        max-width: 100%;
+    }
+    .ticket-body {
+        padding: 18px 15px;
+    }
+    .ticket-col strong {
+        font-size: 0.95rem;
+    }
+    .ticket-col small {
+        font-size: 0.65rem;
+    }
+    .ticket-message {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+    .barcode {
+        font-size: 2.2rem;
+    }
+}
+
 /* ==============================
    HEARTBEAT UNLOCK
 ============================== */
@@ -503,4 +569,99 @@ figcaption {
     height: 100%;
     background: var(--color-accent);
     transition: width 0.1s linear;
+}
+
+/* ==============================
+   MAP COMPONENTS & INTERACTION
+============================== */
+.map-svg {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+}
+
+.map-label {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    fill: var(--color-dark);
+    stroke: var(--color-secondary);
+    stroke-width: 6px;
+    stroke-linejoin: round;
+    paint-order: stroke fill;
+}
+
+.map-sublabel {
+    font-family: var(--font-body);
+    font-weight: 700;
+    fill: var(--color-dark);
+    stroke: var(--color-secondary);
+    stroke-width: 5px;
+    stroke-linejoin: round;
+    paint-order: stroke fill;
+}
+
+.map-marker {
+    transition: transform 0.3s ease;
+}
+.map-marker:hover {
+    transform: scale(1.1);
+}
+
+.map-marker-pulse {
+    transform-origin: center;
+    animation: markerPulse 2s infinite ease-out;
+}
+
+@keyframes markerPulse {
+    0% { transform: scale(0.5); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+.map-line.animate {
+    animation: drawLine 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.map-tooltip {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 16px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(54, 47, 45, 0.15);
+    border: 1px solid rgba(194, 140, 133, 0.4);
+    color: var(--color-dark);
+    text-align: center;
+    z-index: 9999;
+    transition: opacity 0.4s ease;
+    max-width: 80vw;
+}
+
+.map-tooltip.fade-in {
+    opacity: 1;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .map-line {
+        stroke-dashoffset: 0 !important;
+        animation: none !important;
+    }
+    .map-marker-pulse {
+        animation: none !important;
+        opacity: 0.2;
+    }
 }
